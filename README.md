@@ -42,7 +42,7 @@ return [
 ```php
 use CraftCodex\MpiPhpSdk\Services\VirtualAccount;
 
-VirtualAccount::make($data['bank_deposit'])
+VirtualAccount::make('va_bca')
                 ->referencePrefix('PAYMENT-')
                 ->callbackUrl(url('callback/va'))
                 ->expiredIn(minutes: 10)
