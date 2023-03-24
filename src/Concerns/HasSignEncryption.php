@@ -2,7 +2,6 @@
 
 namespace CraftCodex\MpiPhpSdk\Concerns;
 
-use Exception;
 use Illuminate\Support\Str;
 use Throwable;
 
@@ -10,7 +9,8 @@ trait HasSignEncryption
 {
     public function referencePrefix($prefix): static
     {
-        $this->data['referenceId'] = $prefix . Str::uuid()->toString();
+        $this->data['referenceId'] = $prefix.Str::uuid()->toString();
+
         return $this;
     }
 
@@ -26,7 +26,7 @@ trait HasSignEncryption
     {
         return hash_hmac(
             algo: 'sha512',
-            data: $this->getKey() . $this->getReference(),
+            data: $this->getKey().$this->getReference(),
             key: $this->getToken()
         );
     }

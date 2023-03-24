@@ -9,6 +9,7 @@ trait HasCallbackUrl
     public function callbackUrl(string $callbackUrl): static
     {
         $this->callbackUrl = $callbackUrl;
+
         return $this;
     }
 

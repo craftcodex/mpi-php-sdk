@@ -2,9 +2,9 @@
 
 namespace CraftCodex\MpiPhpSdk\Tests;
 
+use CraftCodex\MpiPhpSdk\MpiPhpSdkServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CraftCodex\MpiPhpSdk\MpiPhpSdkServiceProvider;
 
 class TestCase extends Orchestra
 {

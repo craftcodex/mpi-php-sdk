@@ -61,34 +61,35 @@ class VirtualAccount extends MpiPhpSdk
 
     public function getPath(): string
     {
-        return '/va/' . $this->bank;
+        return '/va/'.$this->bank;
     }
 
     public function displayName($viewName): static
     {
         $this->data['viewName'] = $viewName;
+
         return $this;
     }
 
     /**
-     * @param string $bank
-     * @return static
      * @throws Throwable
      */
     public function bank(string $bank): static
     {
         throw_if(
-            condition: !collect(self::getAcceptedBanks())->has($bank),
+            condition: ! collect(self::getAcceptedBanks())->has($bank),
             exception: new Exception('Bank code not found')
         );
 
         $this->bank = $bank;
+
         return $this;
     }
 
     public function amount($amount): static
     {
         $this->data['amount'] = $amount;
+
         return $this;
     }
 }

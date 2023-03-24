@@ -6,13 +6,11 @@ trait HasHeader
 {
     protected array $headers = [
         'Accept' => 'application/json',
-        'user-agent' => 'mpi-php-sdk/1.0.0'
+        'user-agent' => 'mpi-php-sdk/1.0.0',
     ];
 
     /**
      * Get request header
-     *
-     * @return array
      */
     public function getHeaders(): array
     {
@@ -22,7 +20,6 @@ trait HasHeader
     /**
      * Set http headers
      *
-     * @param $headers
      * @return $this
      */
     public function headers($headers): static

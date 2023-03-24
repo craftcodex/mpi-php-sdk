@@ -15,13 +15,13 @@ trait HasData
     public function data($data): static
     {
         $this->data = $data;
+
         return $this;
     }
 
     /**
      * Get http body
      *
-     * @return array
      * @throws \Throwable
      */
     public function getData(): array
@@ -32,7 +32,7 @@ trait HasData
                 'token' => $this->getToken(),
                 'referenceId' => $this->getReference(),
                 'signHash' => $this->getSignEncryption(),
-                'callbackUrl' => $this->getCallbackUrl(false)
+                'callbackUrl' => $this->getCallbackUrl(false),
             ],
             $this->data
         );
